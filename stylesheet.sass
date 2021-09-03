@@ -1,0 +1,109 @@
+*, *:before, *:after
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  font-family: "Poppins"
+
+.header
+  display: flex
+  flex-direction: column
+  align-items: center
+  height: 45vh
+  width: 100%
+  background-image: url("assets/video-gif.gif")
+  background-size: cover
+  gap: 35%
+
+  & img
+    margin-top: 8%
+    width: 45%
+    background-color: #ffffff41
+    padding: 5px
+    border-radius: 5px
+
+#main-button
+  display: flex
+  flex-direction: column
+  align-content: center
+  justify-content: center
+  text-decoration: none
+  text-align: center
+  color: white
+  background-color: #85a717
+  width: 35%
+  height: 15%
+  border-radius: 8px
+  font-size: 1em
+
+  &:hover
+    background-color: #b6e619
+
+  &:active
+    transform: scale(0.8)
+
+#card-guests
+  display: flex
+  flex-direction: column
+  align-items: center
+  padding: 6%
+  gap: 30px
+  background-color: #F5F5F5
+  h2
+    margin-bottom: 1em
+
+.guest
+  display: grid
+  grid-template-columns: 35% 65%
+  grid-template-rows: 5vh 10vh
+  grid-template-areas: "avatar name" "avatar text"
+  width: 100%
+
+  & img
+    grid-area: avatar
+    height: 85%
+
+  & h3
+    grid-area: name
+    font-size: 1.1em
+    text-align: right
+
+  & p
+    grid-area: text
+    font-size: 0.8em
+    text-align: right
+    color: #474747
+
+.guest:nth-child(odd)
+  grid-template-areas: "name avatar" "text avatar"
+  grid-template-columns: 65% 35%
+  & img
+    justify-self: end
+  & h3
+    text-align: left
+  & p
+    text-align: left
+
+.guest:last-child
+  margin-bottom: 1em
+
+#learn-more
+  display: grid
+  grid-template-columns: 1fr 1fr
+  grid-template-rows: 1fr 3fr
+  text-align: right
+
+  img
+    width: 45vw
+    grid-row: span 2
+
+  $margin-right: 15%
+
+  h3
+    margin-top: 10%
+    margin-right: $margin-right
+  p
+    justify-self: end
+    margin-right: $margin-right
+    color: #4A4A4A
+    font-size: 0.8em
+    max-width: 80%
