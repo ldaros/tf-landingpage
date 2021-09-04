@@ -107,3 +107,94 @@
     color: #4A4A4A
     font-size: 0.8em
     max-width: 80%
+
+#team
+  $bg-color: #911D64
+
+  display: grid
+  align-items: center
+  grid-template-columns: 1fr 1fr 1fr
+  grid-template-rows: 10vh 30vh 30vh
+  grid-gap: 1em
+
+  background-color: $bg-color
+  color: #fff
+  padding: 10px
+
+  h2
+    grid-column: span 3
+    text-align: center
+
+  .team-member
+    color: #fff
+    text-decoration: none
+    height: 28vh
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: space-evenly
+    padding: 3%
+    border: 2px solid #ffffff
+    text-align: center
+    border-radius: 8px
+    img
+      width: 65%
+    h3
+      font-size: 0.8em
+
+  .team-member:hover, .team-member:active
+    transition: all 0.1s ease-in
+    background-color: lighten($bg-color, 20%)
+
+#contact
+  width: 100%
+  display: flex
+  flex-direction: column
+  align-items: center
+  text-align: center
+  padding: 1em
+  gap: 1.5em
+  background-color: #ededede6
+
+  form
+    display: flex
+    flex-direction: column
+    width: 100%
+    gap: 0.5em
+  input, textarea
+    border: 1px solid #000000
+    background-color: #ededede6
+    border-radius: 10px
+    width: 90%
+    height: 3em
+    padding: 0.5em
+    padding-left: 1em
+    font-size: 0.9em
+    display: block
+  input:first-child
+    width: 70%
+  input:last-child
+    background-color: #911D64
+    color: white
+  input:last-child:active
+    background-color: lighten(#911D64,20% )
+  textarea
+    resize: none
+    height: unset
+
+footer
+  display: flex
+  flex-direction: column
+  align-items: center
+  background-color: #ededede6
+  width: 100%
+  gap: 20px
+  padding: 1em 2em
+  p
+    font-size: 0.5em
+    text-align: justify
+    text-justify: inter-word
+    display: list-item
+
+  img
+    width: 40%
