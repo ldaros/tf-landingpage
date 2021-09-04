@@ -1,0 +1,260 @@
+// Colors:
+$theme-green: #85a717;
+$theme-magenta: #911d64;
+$subtext: #4a4a4a;
+$bg-gray: #f5f5f5;
+
+$top-padding: 2rem;
+$side-padding: 1.5rem;
+
+$desktop: 840px;
+@mixin desktop {
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
+}
+
+@mixin column-aligned {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins";
+}
+
+header {
+  @include column-aligned;
+  justify-content: space-around;
+
+  height: 45vh;
+  background-image: url("assets/video-gif.gif");
+  background-size: cover;
+
+  img {
+    width: 45%;
+  }
+
+  .button {
+    @include column-aligned;
+    justify-content: center;
+
+    width: clamp(3rem, 30%, 10rem);
+    height: clamp(2rem, 20%, 3rem);
+    border-radius: 8px;
+
+    background-color: $theme-green;
+    color: white;
+
+    font-size: 1em;
+    text-decoration: none;
+    text-align: center;
+
+    :hover {
+      background-color: lighten($theme-green, 20%);
+    }
+    :active {
+      transform: scale(0.8);
+    }
+  }
+}
+
+section#guests {
+  @include column-aligned;
+  gap: 1.3em;
+
+  padding: $top-padding $side-padding;
+  background-color: $bg-gray;
+
+  h2 {
+    margin-bottom: 1em;
+  }
+
+  .guest {
+    display: grid;
+    min-height: 100px;
+    grid-template-columns: 1.3fr 2.8fr;
+    grid-template-rows: 1fr 2fr;
+    grid-template-areas: "avatar name" "avatar text";
+
+    img {
+      grid-area: avatar;
+      width: 100%;
+      align-self: center;
+    }
+    h3 {
+      grid-area: name;
+      font-size: 1.1em;
+      text-align: right;
+    }
+    p {
+      grid-area: text;
+      font-size: 0.8em;
+      text-align: right;
+      color: $subtext;
+      padding-left: 15px;
+    }
+
+    &:nth-child(odd) {
+      grid-template-areas: "name avatar" "text avatar";
+      grid-template-columns: 2.8fr 1.3fr;
+
+      img {
+        justify-self: end;
+      }
+
+      h3,
+      p {
+        text-align: left;
+      }
+
+      p {
+        padding: 0 15px 0 0;
+      }
+    }
+  }
+}
+
+section#learn-more {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 3fr;
+  text-align: right;
+
+  img {
+    grid-row: span 2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  h3 {
+    padding: $top-padding $side-padding;
+  }
+
+  p {
+    justify-self: end;
+    padding: 10px $side-padding;
+    color: $subtext;
+    font-size: 0.8em;
+  }
+}
+
+section#team {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 10vh 30vh 30vh;
+  grid-gap: 0.5em;
+
+  background-color: $theme-magenta;
+  color: #fff;
+  padding: $top-padding $side-padding;
+
+  h2 {
+    grid-column: span 3;
+    text-align: center;
+  }
+
+  .team-member {
+    @include column-aligned;
+
+    color: #fff;
+    text-decoration: none;
+    height: 28vh;
+    justify-content: space-evenly;
+    padding: 3%;
+    border: 2px solid #ffffff;
+    text-align: center;
+    border-radius: 8px;
+
+    img {
+      width: 65%;
+    }
+    h3 {
+      font-size: 0.8em;
+    }
+  }
+
+  &:hover,
+  &:active {
+    transition: all 0.1s ease-in;
+    background-color: lighten($theme-magenta, 20%);
+  }
+}
+
+section#contact {
+  @include column-aligned;
+
+  width: 100%;
+  text-align: center;
+  padding: 1em;
+  gap: 1.5em;
+  background-color: $bg-gray;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5em;
+  }
+
+  input,
+  textarea {
+    display: block;
+    border: 1px solid #000000;
+    background-color: $bg-gray;
+    border-radius: 10px;
+    width: 90%;
+    height: 3em;
+    padding: 0.5em;
+    padding-left: 1em;
+    font-size: 0.9em;
+  }
+
+  textarea {
+    resize: none;
+    height: unset;
+  }
+
+  // Name Field
+  input:first-child {
+    width: 70%;
+  }
+
+  // Button
+  input:last-child {
+    background-color: #911d64;
+    color: white;
+
+    &:active {
+      background-color: lighten(#911d64, 20%);
+    }
+  }
+}
+
+footer {
+  @include column-aligned;
+
+  background-color: $bg-gray;
+  width: 100%;
+  gap: 20px;
+  padding: 1em 2em;
+
+  p {
+    font-size: 0.5em;
+    text-align: justify;
+    text-justify: inter-word;
+    display: list-item;
+  }
+
+  img {
+    width: 40%;
+  }
+}
