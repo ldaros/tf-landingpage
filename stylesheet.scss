@@ -76,6 +76,9 @@ section#guests {
   background-color: $bg-gray;
   h2 {
     margin-bottom: 1em;
+    @include desktop {
+      font-size: 2em;
+    }
   }
 
   .guest {
@@ -130,6 +133,9 @@ section#guests {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 3fr;
 
+    padding: $top-padding $side-padding + 5;
+    padding-bottom: $top-padding + 5;
+
     h2 {
       grid-column: span 3;
       text-align: center;
@@ -177,6 +183,19 @@ section#learn-more {
     color: $subtext;
     font-size: 0.8em;
   }
+
+  @include desktop {
+    height: 80vh;
+
+    h3 {
+      font-size: 2em;
+      padding: $top-padding + 3 $side-padding + 5;
+    }
+    p {
+      font-size: 1.5em;
+      padding: 10px $side-padding + 5;
+    }
+  }
 }
 
 section#team {
@@ -218,6 +237,26 @@ section#team {
       background-color: lighten($theme-magenta, 20%);
     }
   }
+
+  @include desktop {
+    grid-template-columns: 12% 12% 12% 12%;
+    grid-template-rows: 10vh 40vh;
+    justify-content: center;
+
+    h2 {
+      grid-column: span 4;
+      font-size: 2em;
+    }
+
+    .team-member {
+      img {
+        width: 65%;
+      }
+      h3 {
+        font-size: 1.3em;
+      }
+    }
+  }
 }
 
 section#contact {
@@ -227,11 +266,21 @@ section#contact {
   gap: 1.5em;
   background-color: $bg-gray;
 
+  @include desktop {
+    h2 {
+      font-size: 2em;
+    }
+  }
+
   form {
     display: flex;
     flex-direction: column;
     width: 100%;
     gap: 0.5em;
+
+    @include desktop {
+      width: 50%;
+    }
   }
 
   input,
@@ -243,6 +292,10 @@ section#contact {
     height: 3em;
     padding: 0.5em 1em;
     font-size: 0.9em;
+
+    @include desktop {
+      font-size: 1.2em;
+    }
   }
 
   textarea {
@@ -280,10 +333,19 @@ footer {
     text-align: justify;
     text-justify: inter-word;
     display: list-item;
+
+    @include desktop {
+      font-size: 0.8em;
+      max-width: 50%;
+    }
   }
 
   img {
     width: 40%;
+
+    @include desktop {
+      width: 20%;
+    }
   }
 }
 
