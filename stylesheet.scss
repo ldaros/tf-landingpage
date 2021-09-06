@@ -166,11 +166,14 @@ section#learn-more {
   grid-template-rows: 1fr 3fr;
   text-align: right;
 
-  img {
+  picture {
     grid-row: span 2;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 
   h3 {
@@ -253,7 +256,7 @@ section#team {
         width: 65%;
       }
       h3 {
-        font-size: 1.3em;
+        font-size: 1em;
       }
     }
   }
