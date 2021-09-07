@@ -1,17 +1,18 @@
 {
-  // See https://go.microsoft.com/fwlink/?LinkId=733558
-  // for the documentation about the tasks.json format
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "start sass",
+      "label": "watch sass",
       "type": "shell",
-      "command": "sass --watch stylesheet.scss:styles-min.css --style compressed",
-      "problemMatcher": [],
-      "group": {
-        "kind": "build",
-        "isDefault": true
-      }
+      "command": "sass --watch stylesheet.scss:build/styles-min.css --style compressed",
+      "problemMatcher": []
+    },
+
+    {
+      "label": "watch typescript",
+      "type": "shell",
+      "command": "tsc --watch code.ts --outFile ./build/code-compiled.js",
+      "problemMatcher": []
     }
   ]
 }

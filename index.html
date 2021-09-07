@@ -7,7 +7,8 @@
       href="https://fonts.googleapis.com/css?family=Poppins"
       rel="stylesheet"
     />
-    <link rel="stylesheet" type="text/css" href="styles-min.css" />
+    <link rel="stylesheet" type="text/css" href="build/styles-min.css" />
+    <script src="https://code.iconify.design/2/2.0.4/iconify.min.js"></script>
     <title>Landingpage</title>
   </head>
 
@@ -15,11 +16,14 @@
     <!-- Header -->
     <header>
       <img src="assets/logo-color.png" alt="" />
-      <a class="button" href="javascript:alert('Test')">Paricipe!</a>
+      <a class="button" href="https://graduacao.imed.edu.br/teu-futuro/"
+        >Paricipe!</a
+      >
     </header>
 
     <!-- Guests -->
     <section id="guests">
+      <div class="scroll-indicator"></div>
       <h2>Convidados</h2>
       <div class="guest">
         <img src="assets/writter-1.png" />
@@ -65,21 +69,47 @@
     <!-- Team Cards -->
     <section id="team">
       <h2>Nosso Time</h2>
-      <a class="team-member" href="javascript:void(0)">
+      <a
+        class="team-member"
+        onclick="openNav('Luan Daros', 'ldaros', 'darosluan@gmail.com', null)"
+      >
         <img src="assets/tm-daros.png" alt="Perfil" />
         <h3>Luan Daros</h3>
       </a>
-      <a class="team-member" href="javascript:void(0)">
+      <a
+        class="team-member"
+        onclick="openNav('Angélica Caovila Bury', null, 'acaovilabury@gmail.com', null)"
+      >
         <img src="assets/tm-bury.png" alt="Perfil" />
         <h3>Angélica Caovila Bury</h3>
       </a>
-      <a class="team-member" href="javascript:void(0)">
+      <a
+        class="team-member"
+        onclick="openNav('Gabriel Ramos Wendland', null, 'gabrieelramoswendl4nd@gmail.com', null)"
+      >
         <img src="assets/tm-wend.png" alt="Perfil" />
         <h3>Gabriel Ramos Wendland</h3>
       </a>
-      <a class="team-member" href="javascript:void(0)">
+      <a
+        class="team-member"
+        onclick="openNav('Davih de Castro Ottoni', null, 'davihcastro6@gmail.com', null)"
+      >
         <img src="assets/tm-ottoni.png" alt="Perfil" />
         <h3>Davih de Castro Ottoni</h3>
+      </a>
+      <a
+        class="team-member"
+        onclick="openNav('Nícollas Pilatti', null, null, 'https://www.instagram.com/invites/contact/?i=jw52jrn2uqi9&utm_content=212671c')"
+      >
+        <img src="assets/tm-pilatti.png" alt="Perfil" />
+        <h3>Nícollas Pilatti</h3>
+      </a>
+      <a
+        class="team-member"
+        onclick="openNav('Mateus Cardoso', null, null, null)"
+      >
+        <img src="assets/tm-cardoso.png" alt="Perfil" />
+        <h3>Mateus Cardoso</h3>
       </a>
     </section>
 
@@ -87,7 +117,7 @@
     <section id="contact">
       <h2>Entre em contato</h2>
       <form
-        action="mailto:someone@example.com"
+        action="mailto:darosluan@gmail.com"
         method="post"
         enctype="text/plain"
       >
@@ -99,7 +129,7 @@
           rows="5"
           required
         ></textarea>
-        <input type="submit" value="Enviar" />
+        <input id="send" type="submit" value="Enviar" />
       </form>
     </section>
 
@@ -125,5 +155,28 @@
     >
       <source src="assets/video-bg.mp4" type="video/mp4" />
     </video>
+
+    <div id="overlay">
+      <h2 id="ov-name">Name</h2>
+
+      <a id="ov-github" href="">
+        <span class="iconify" data-icon="akar-icons:github-fill"></span>
+        <p></p>
+      </a>
+
+      <a id="ov-mail" href="">
+        <span class="iconify" data-icon="ci:mail"></span>
+        <p></p>
+      </a>
+
+      <a id="ov-ig" href="">
+        <span class="iconify" data-icon="akar-icons:instagram-fill"></span>
+        <p></p>
+      </a>
+
+      <a onclick="closeNav()" class="closebtn">Fechar</a>
+    </div>
+
+    <script src="build/code-compiled.js"></script>
   </body>
 </html>
