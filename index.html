@@ -116,11 +116,7 @@
     <!-- Contact form -->
     <section id="contact">
       <h2>Entre em contato</h2>
-      <form
-        action="mailto:darosluan@gmail.com"
-        method="post"
-        enctype="text/plain"
-      >
+      <form>
         <input type="text" name="name" placeholder="Nome" required />
         <input type="email" name="mail" placeholder="E-mail" required />
         <textarea
@@ -129,7 +125,7 @@
           rows="5"
           required
         ></textarea>
-        <input id="send" type="submit" value="Enviar" />
+        <input id="send" type="submit" value="Enviar" onclick="SubmitData()" />
       </form>
     </section>
 

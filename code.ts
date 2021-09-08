@@ -60,7 +60,40 @@ function closeNav():void {
   overlay.style.width = "0";
 }
 
+/** Submit form data */
+async function SubmitData() {
+  
+  const namefield:HTMLInputElement = select("input[name='name']");
+  const mailfield:HTMLInputElement  = select("input[name='mail']");
+  const msgfield:HTMLTextAreaElement = select("textarea[name='comment']");
+
+    // package my data
+    const data = {
+      name: namefield.value,
+      email: mailfield.value,
+      message: msgfield.value
+    };
+
+    // set up request parameters
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    };
+
+    // fetch the request
+    const request = await fetch("http://127.0.0.1:3000/api", options);
+    const recieve = await request.json();
+
+    console.log(recieve);
+
+    alert("Enviado com sucesso");
+}
+
 /**  Attach a listener to the send form button. */
-select("#send").addEventListener("click",  () => {
+select("#send").addEventListener("click",  (event) => {
+  event.preventDefault()
   if (!checkSend()) alert("Preencha todos os campos.");
 });
