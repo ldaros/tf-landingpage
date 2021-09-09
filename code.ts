@@ -62,7 +62,11 @@ function closeNav():void {
 
 /** Submit form data */
 async function SubmitData() {
-  
+  if (!checkSend()) {
+    alert("Preencha todos os campos.");
+    return false;
+  };
+
   select(".lds-ring").style.display = "inline-block";
   const namefield:HTMLInputElement = select("input[name='name']");
   const mailfield:HTMLInputElement  = select("input[name='mail']");
@@ -96,5 +100,4 @@ async function SubmitData() {
 /**  Attach a listener to the send form button. */
 select("#send").addEventListener("click",  (event) => {
   event.preventDefault()
-  if (!checkSend()) alert("Preencha todos os campos.");
 });

@@ -98,6 +98,11 @@ function SubmitData() {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
+                    if (!checkSend()) {
+                        alert("Preencha todos os campos.");
+                        return [2 /*return*/, false];
+                    }
+                    ;
                     select(".lds-ring").style.display = "inline-block";
                     namefield = select("input[name='name']");
                     mailfield = select("input[name='mail']");
@@ -131,6 +136,4 @@ function SubmitData() {
 /**  Attach a listener to the send form button. */
 select("#send").addEventListener("click", function (event) {
     event.preventDefault();
-    if (!checkSend())
-        alert("Preencha todos os campos.");
 });
