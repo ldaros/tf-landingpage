@@ -84,7 +84,7 @@ async function SubmitData() {
     };
 
     // fetch the request
-    const request = await fetch("http://127.0.0.1:3000/api", options);
+    const request = await fetch("https://tf-landingpage.glitch.me/api", options);
     const recieve = await request.json();
 
     console.log(recieve);

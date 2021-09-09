@@ -113,7 +113,7 @@ function SubmitData() {
                         },
                         body: JSON.stringify(data)
                     };
-                    return [4 /*yield*/, fetch("http://127.0.0.1:3000/api", options)];
+                    return [4 /*yield*/, fetch("https://tf-landingpage.glitch.me/api", options)];
                 case 1:
                     request = _a.sent();
                     return [4 /*yield*/, request.json()];
