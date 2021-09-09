@@ -63,33 +63,34 @@ function closeNav():void {
 /** Submit form data */
 async function SubmitData() {
   
+  select(".lds-ring").style.display = "inline-block";
   const namefield:HTMLInputElement = select("input[name='name']");
   const mailfield:HTMLInputElement  = select("input[name='mail']");
   const msgfield:HTMLTextAreaElement = select("textarea[name='comment']");
-
-    // package my data
-    const data = {
-      name: namefield.value,
-      email: mailfield.value,
-      message: msgfield.value
-    };
-
-    // set up request parameters
-    const options = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    };
-
-    // fetch the request
-    const request = await fetch("https://tf-landingpage.glitch.me/api", options);
-    const recieve = await request.json();
-
-    console.log(recieve);
-
-    alert("Enviado com sucesso");
+  
+  // package my data
+  const data = {
+    name: namefield.value,
+    email: mailfield.value,
+    message: msgfield.value
+  };
+  
+  // set up request parameters
+  const options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  };
+  
+  // fetch the request
+  const request = await fetch("https://tf-landingpage.glitch.me/api", options);
+  const recieve = await request.json();
+  
+  console.log(recieve);
+  alert("Enviado com sucesso");
+  select(".lds-ring").style.display = "none";
 }
 
 /**  Attach a listener to the send form button. */

@@ -98,6 +98,7 @@ function SubmitData() {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
+                    select(".lds-ring").style.display = "inline-block";
                     namefield = select("input[name='name']");
                     mailfield = select("input[name='mail']");
                     msgfield = select("textarea[name='comment']");
@@ -121,6 +122,7 @@ function SubmitData() {
                     recieve = _a.sent();
                     console.log(recieve);
                     alert("Enviado com sucesso");
+                    select(".lds-ring").style.display = "none";
                     return [2 /*return*/];
             }
         });
