@@ -1,178 +1,64 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
     <link
-      href="https://fonts.googleapis.com/css?family=Poppins"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
     />
-    <link rel="stylesheet" type="text/css" href="build/styles-min.css" />
-    <script src="https://code.iconify.design/2/2.0.4/iconify.min.js"></script>
-    <title>Landingpage</title>
   </head>
-
   <body>
-    <!-- Header -->
-    <header>
-      <img src="assets/logo-color.png" alt="" />
-      <a class="button" href="https://graduacao.imed.edu.br/teu-futuro/"
-        >Paricipe!</a
-      >
-    </header>
-
-    <!-- Guests -->
-    <section id="guests">
-      <div class="scroll-indicator"></div>
-      <h2>Convidados</h2>
-      <div class="guest">
-        <img src="assets/writter-1.png" />
-        <h3>Airton Ortiz</h3>
-        <p>
-          Criador do gênero Jornalismo de Aventura, tem no currículo 17 livros
-          publicados.
-        </p>
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div id="content" class="col-7 d-flex flex-column">
+          <h1 class="display-4 mt-3 text-center">Display Data</h1>
+          <button class="btn btn-primary mt-5 mb-5 " onclick="getData()">
+            Get data
+          </button>
+        </div>
       </div>
-      <div class="guest">
-        <img src="assets/writter-2.png" />
-        <h3>Jeferson Tenório</h3>
-        <p>
-          Escritor de O beijo na parede, eleito o livro do ano pela Associação
-          Gaúcha de Escritores.
-        </p>
-      </div>
-      <div class="guest">
-        <img src="assets/writter-3.png" />
-        <h3>Isabel Allende</h3>
-        <p>
-          Autora de A Casa dos Espíritos. Considerada uma das principais
-          revelações da literatura latino-americana da década de 1980.
-        </p>
-      </div>
-    </section>
-
-    <!-- Learn More -->
-    <section id="learn-more">
-      <picture>
-        <source media="(min-width: 650px)" srcset="assets/about.jpg" />
-        <img src="assets/more-mobile.png" alt="" />
-      </picture>
-
-      <h3>Saiba Mais</h3>
-      <p>
-        Tendo sua primeira edição em 1955, a feira do livro é uma das reuniões
-        culturais mais importantes do nosso estado. Apresenta novos autores e
-        busca as raízes de nosso povo através da literatura.
-      </p>
-    </section>
-
-    <!-- Team Cards -->
-    <section id="team">
-      <h2>Nosso Time</h2>
-      <a
-        class="team-member"
-        onclick="openNav('Luan Daros', 'ldaros', 'darosluan@gmail.com', null)"
-      >
-        <img src="assets/tm-daros.png" alt="Perfil" />
-        <h3>Luan Daros</h3>
-      </a>
-      <a
-        class="team-member"
-        onclick="openNav('Angélica Caovila Bury', null, 'acaovilabury@gmail.com', null)"
-      >
-        <img src="assets/tm-bury.png" alt="Perfil" />
-        <h3>Angélica Caovila Bury</h3>
-      </a>
-      <a
-        class="team-member"
-        onclick="openNav('Gabriel Ramos Wendland', null, 'gabrieelramoswendl4nd@gmail.com', null)"
-      >
-        <img src="assets/tm-wend.png" alt="Perfil" />
-        <h3>Gabriel Ramos Wendland</h3>
-      </a>
-      <a
-        class="team-member"
-        onclick="openNav('Davih de Castro Ottoni', null, 'davihcastro6@gmail.com', null)"
-      >
-        <img src="assets/tm-ottoni.png" alt="Perfil" />
-        <h3>Davih de Castro Ottoni</h3>
-      </a>
-      <a
-        class="team-member"
-        onclick="openNav('Nícollas Pilatti', null, null, 'https://www.instagram.com/invites/contact/?i=jw52jrn2uqi9&utm_content=212671c')"
-      >
-        <img src="assets/tm-pilatti.png" alt="Perfil" />
-        <h3>Nícollas Pilatti</h3>
-      </a>
-      <a
-        class="team-member"
-        onclick="openNav('Mateus Cardoso', null, null, null)"
-      >
-        <img src="assets/tm-cardoso.png" alt="Perfil" />
-        <h3>Mateus Cardoso</h3>
-      </a>
-    </section>
-
-    <!-- Contact form -->
-    <section id="contact">
-      <h2>Entre em contato</h2>
-      <form>
-        <input type="text" name="name" placeholder="Nome" required />
-        <input type="email" name="mail" placeholder="E-mail" required />
-        <textarea
-          name="comment"
-          placeholder="Mensagen"
-          rows="5"
-          required
-        ></textarea>
-        <input id="send" type="submit" value="Enviar" onclick="SubmitData()" />
-      </form>
-    </section>
-
-    <!-- Footer and logo -->
-    <footer>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat
-        pulvinar ut nunc rutrum auctor erat nam. Ante nibh magna elit sem
-        lobortis. Ullamcorper diam mattis vel consequat odio massa. Posuere
-        euismod cras dui nascetur. Euismod convallis in in aliquam libero, justo
-        vivamus turpis amet.
-      </p>
-      <img src="assets/logo-dark.png" alt="logo" />
-    </footer>
-
-    <video
-      autoplay
-      loop
-      muted
-      controls="false"
-      class="bg_video"
-      poster="assets/bg-extra.jpg"
-    >
-      <source src="assets/video-bg.mp4" type="video/mp4" />
-    </video>
-
-    <div id="overlay">
-      <h2 id="ov-name">Name</h2>
-
-      <a id="ov-github" href="">
-        <span class="iconify" data-icon="akar-icons:github-fill"></span>
-        <p></p>
-      </a>
-
-      <a id="ov-mail" href="">
-        <span class="iconify" data-icon="ci:mail"></span>
-        <p></p>
-      </a>
-
-      <a id="ov-ig" href="">
-        <span class="iconify" data-icon="akar-icons:instagram-fill"></span>
-        <p></p>
-      </a>
-
-      <a onclick="closeNav()" class="closebtn">Fechar</a>
     </div>
 
-    <script src="build/code-compiled.js"></script>
+    <script>
+      async function getData() {
+        const response = await fetch("/api");
+        const data = await response.json();
+        console.log(data);
+
+        for (item of data) {
+          const root = document.createElement("div");
+          root.className = "p-4 bg-light border rounded-3 mb-3";
+
+          const h2 = document.createElement("h3");
+          h2.textContent = item.name;
+
+          const h5 = document.createElement("h5");
+          h5.textContent = item.email;
+          h5.classNmae = "mb-3"
+
+          const p = document.createElement("p");
+          p.textContent = item.message;
+          
+          p.className = "mb-3 mark";
+          
+          const subp = document.createElement("p");
+          subp.textContent = item._id;
+          subp.className = "text-muted";
+
+          root.append(h2);
+          root.append(h5);
+          root.append(p);
+          root.append(subp);
+          
+          document.querySelector("#content").appendChild(root);
+        }
+      }
+    </script>
   </body>
 </html>
