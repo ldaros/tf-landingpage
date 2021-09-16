@@ -17,12 +17,13 @@ function checkSend():boolean {
 }
 
 /** Builds and shows the overlay. */
-function openNav(name:string, github:string, mail:string, ig:string):void {
+function openNav(name:string, github:string, mail:string, ig:string, linked:string):void {
   // get the content fields
   // children: [0] = svg [1] = text(p)
   let github_div:HTMLDivElement = select("#ov-github");
   let mail_div:HTMLDivElement = select("#ov-mail");
   let ig_div:HTMLDivElement = select("#ov-ig");
+  let linked_div:HTMLDivElement = select("#ov-linked");
   let overlay:HTMLDivElement = select("#overlay");
   
   overlay.style.width = "100%"; // display it on the page
@@ -51,6 +52,14 @@ function openNav(name:string, github:string, mail:string, ig:string):void {
     ig_div.attributes[1].value = ig;
   } else {
     ig_div.style.display = "none";
+  }
+
+  if (linked != null) { // set the linkedin account
+    linked_div.style.display = "flex";
+    linked_div.children[1].textContent = name;
+    linked_div.attributes[1].value = linked;
+  } else {
+    linked_div.style.display = "none";
   }
 }
 

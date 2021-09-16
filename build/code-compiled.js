@@ -52,12 +52,13 @@ function checkSend() {
     return true;
 }
 /** Builds and shows the overlay. */
-function openNav(name, github, mail, ig) {
+function openNav(name, github, mail, ig, linked) {
     // get the content fields
     // children: [0] = svg [1] = text(p)
     var github_div = select("#ov-github");
     var mail_div = select("#ov-mail");
     var ig_div = select("#ov-ig");
+    var linked_div = select("#ov-linked");
     var overlay = select("#overlay");
     overlay.style.width = "100%"; // display it on the page
     select("#ov-name").textContent = name; // set the name
@@ -84,6 +85,14 @@ function openNav(name, github, mail, ig) {
     }
     else {
         ig_div.style.display = "none";
+    }
+    if (linked != null) { // set the linkedin account
+        linked_div.style.display = "flex";
+        linked_div.children[1].textContent = name;
+        linked_div.attributes[1].value = linked;
+    }
+    else {
+        linked_div.style.display = "none";
     }
 }
 /** Closes the overlay. */
